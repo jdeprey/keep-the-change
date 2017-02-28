@@ -1,0 +1,40 @@
+{% extends '../layouts/default.html' %}
+
+{% block content %}
+
+<div class="container" id="login-container">
+    <div class="row">
+        <div class="col-xs-4 offset-xs-5">
+            <h4>Register</h4>
+        </div>
+    </div>
+    <div class="panel-login">
+        <form action="/register" method="post">
+            <div class="form-inline" id="reg_inline_form_group">
+                <div class="form-group" id="left-reg-inline-group">
+                    <input id="reg_first_name" class="form-control" placeholder="First Name" type="text" name="fname">
+                </div>
+                <div class="form-group" id="right-reg-inline-group">
+                    <input id="reg_last_name" class="form-control" placeholder="Last Name" type="text" name="lname">
+                </div>
+            </div>
+            <div class="form-group">
+                <input id="username" class="form-control" placeholder="Email" type="text" value="{{ username }}"" name="un">
+            </div>
+            <div class="form-group">    
+                <input id="password" class="form-control" placeholder="Password" type="password" name="pw">
+            </div>
+            <div class="form-group">    
+                <input id="validate_password" class="form-control" placeholder="Validate Password" type="password" name="vpw">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>        
+            <div class="row">
+                <div class="col-xs-6 offset-xs-4">
+                    <p class="form-control-static">Already have an account? <a href="/login">Log in.</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

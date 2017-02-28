@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Keep The Change</title>
+        <!-- Bootstrap core CSS -->
+    	<link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/layout.css">
+    </head>
+
+    <body>
+    	<!-- navbar -->
+    	<div class="container">
+    		<div class="header clearfix">
+		        <nav class="navbar navbar-light">
+		          <a class="navbar-brand" href="/">Keep the Change</a>
+		            <ul class="nav navbar-nav">
+		              {% if showNav %}
+		              <li class="nav-item {{home}}" id="nav-item-home">
+		                <a class="nav-link" href="/home">Home</a>
+		              </li>
+		              <li class="nav-item {{charities}}" id="nav-item-charities">
+		                <a class="nav-link" href="/charities">Charities</a>
+		              </li>
+		              <li class="nav-item {{payments}}" id="nav-item-payments">
+		                <a class="nav-link" href="/payments">Payments</a>
+		              </li>
+		              {% endif %}
+		              <li class="nav-item {{login}} float-xs-right" id="nav-item-log">
+		                <a class="nav-link" href="{{ loghref }}">Log {{ logged }}</a>
+		              </li>
+		              {% if showNav %}
+		              <li class="nav-item float-xs-right {{sim}}" id="nav-item-sim">
+		              	<a class="nav-link" href="/sim">Simulate a Transaction</a>
+		              </li>
+		              {% endif %}
+		            </ul>          
+		       	</nav>       
+		    </div>
+
+		    <!-- Previous non-Bootstrap navbar...
+		        <nav>
+		            <ul>
+		                <li><a href="/">Home</a></li>
+		                {% if isAuthenticated %}
+		                    <li><a href="/home">My Home</a></li>
+		                    <li><a href="/logout">Logout</a></li>
+		                {% else %}
+		                    <li><a href="/login">Login</a></li>
+		                {% endif %}
+		            </ul>
+		        </nav>
+			-->
+	        <ul class="list-group" id="messages">
+	        {% for message in messages %}
+	            <li class="list-group-item list-group-item-{{message.type}}" role="alert">
+	            	{{ message.message }}
+	            </li>
+	        {% endfor %}
+	        </ul>
+
+	        {% block content %}{% endblock %}
+	        
+	        <!-- footer -->
+	        <footer class="footer">
+        		<p>&copy; CS 361 Project Group 3 2016</p>
+      		</footer>
+      	<!-- /container -->	
+	    </div> 
+	</body>
+</html>

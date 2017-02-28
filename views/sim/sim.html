@@ -1,0 +1,44 @@
+{% extends '../layouts/default.html' %}
+
+{% block content %}
+<div class="container" id="login-container">
+    <div class="row">
+        <div class="col-xs-8 offset-xs-3">
+            <h4>Simulate an NFC Transaction</h4>
+        </div>
+    </div>
+    <div class="panel-login">
+        <form action="/transact" method="post">
+            
+            <div class="form-group">
+            	<label for="date" class="control-label col-xs-12">Date</label>
+                <input id="date" class="form-control" placeholder="yyyy-mm-dd" type="date" value="{{ username }}"" name="date">
+            </div>
+            <div class="form-group">   
+            	<label for="amount" class="control-label col-xs-12">Transaction Amount (Amount donated rounded up to the nearest dollar)</label> 
+                <input id="amount" class="form-control" placeholder="xxx.xx" type="text" name="amount">
+            </div>
+            <div class="form-group" >
+            	<label for="charity-select" class="control-label col-xs-12">Charity</label>
+	            <select name="charity" class="form-control" id="charity-select">
+	            	{% for charity in charitiesArray %}
+	            	<option value="{{charity}}">{{charity}}</option>
+	            	{% endfor %}
+	            </select>
+	        </div>
+            <div class="form-group" >
+            	<label for="payment-select" class="control-label col-xs-12">Payment Provider</label>
+            	<select name="payment" class="form-control" id="payment-select">
+            		{% for payment in paymentsArray %}
+            		<option value="{{payment}}">{{payment}}</option>
+            		{% endfor %}
+            	</select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>        
+            <div class="row">
+                
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

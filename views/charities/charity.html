@@ -1,0 +1,32 @@
+{% extends '../layouts/default.html' %}
+
+{% block content %}
+
+{% if found %}
+
+<div id="charity-card-row" class="row">
+	<div class="col-xs-4 offset-xs-4">
+	  	<div id="charity-card" class="card">
+	    	<img class="card-img-top img-fluid" src="img/400x300.png" alt="Card image cap">
+	    	<div class="card-block">
+	      		<h4 class = "card-title" id="charity-card-text">{{name}}</h4>
+	      		<p class="card-text">{{city}}, {{state}}</p>
+	      		<p class="card-text" id="charity-card-description">{{description}}</p>
+	      		<div class="text-xs-center">
+	        		<div class="btn btn-primary btn-block" id="charity-card-submit-button">Set as my charity</div>
+	      		</div>  
+	    	</div>
+	  	</div>
+	</div>
+</div>
+
+{% else %}
+
+<h3> We were unable to find the charity you're looking for. </h3>
+
+{% endif %}
+
+<!-- Charity page script -->
+<script src="./js/charity_public.js"></script>
+
+{% endblock %}

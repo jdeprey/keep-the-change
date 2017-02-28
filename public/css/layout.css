@@ -1,0 +1,242 @@
+html{
+  position: relative;
+  min-height: 100%;
+  overflow:scroll;
+}
+
+body {
+    /*font-family: arial, helvetica;*/
+    font-size: 12px;
+    margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+    nav ul > li {
+        display: inline-block;
+        margin: 0;
+        padding: .25em;
+    }
+
+#messages {
+    list-style: none;
+    margin-bottom: 1.35rem;
+    padding: 0;*/
+}
+    /*#messages li {
+        border: 1px solid #c8c8c8;
+        color: #333;
+        margin: .5em 0;
+        padding: .25em;
+    }
+    #messages li.error {
+        border-color: red;
+        color: red;
+    }
+    #messages li.success {
+        border-color: green;
+        color: green;
+    }*/
+
+form ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+    label {
+        display: block;
+        float: left;
+        width: 80px;
+    }
+
+/* Space out content a bit */
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 0.5rem;
+  border-bottom: .05rem solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 2rem;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 1.5rem;
+  color: #777;
+  border-top: .05rem solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 48em) {
+  .container {
+    max-width: 64rem;
+  }
+}
+.container-narrow > hr {
+  margin: 2rem 0;
+}
+
+#login-container {
+  max-width: 40rem;
+}
+
+/* Log in and registration panels */
+.panel-login {
+  border-color: #ccc;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.2);
+  padding: 2.5rem 3rem 0rem 3rem;
+}
+
+/* Registration form inline block */
+#reg_inline_form_group {
+  margin-bottom: 1rem;
+}
+
+#left-reg-inline-group {
+  width: 49%;
+}
+
+#right-reg-inline-group {
+  float: right;
+  width: 49%;
+}
+
+#reg_first_name {
+  width: 100%;
+}
+
+#reg_last_name {
+  width: 100%;
+  float: right 
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: .75rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 3rem 0;
+}
+.marketing p + h4 {
+  margin-top: 1.5rem;
+}
+
+/* Home page custom CSS by ID */
+
+#home-jumbo{
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+  background-color: #FFF;
+}
+
+#home-jumbo-header {
+  margin-bottom: 4.0rem;
+}
+
+#monthly-total {
+  margin-bottom: 3.0rem;
+  font-weight: 500;
+}
+
+#home-charity-header {
+  margin-bottom: 0rem;
+  font-weight:500;
+}
+
+#home-charity {
+  margin-top: 0rem;
+  font-weight:100;
+  margin-bottom: 2rem;
+}
+
+#home-payment-header {
+  margin-bottom: 0rem;
+}
+
+#home-payment {
+  margin-top: 0rem;
+  font-weight: 100;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+
+  .navbar-light {
+    background-color: #FFF;
+  }
+
+  .row {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer {
+    margin-top: 1.5rem;
+  }
+
+  #charity-card-row {
+    margin-bottom: 15rem;
+  }
+
+  #charity-card-description {
+    color: #999999;
+  }
+
+  .charities-card {
+    cursor: pointer; 
+    cursor: hand;
+  }
+}

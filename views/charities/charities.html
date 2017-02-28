@@ -1,0 +1,49 @@
+{% extends '../layouts/default.html' %}
+
+{% block content %}
+<!-- Charity header -->
+<div class="row">
+    <div class="col-xs-4 offset-xs-5">
+        <h4>Select a Charity</h4>
+    </div>
+</div>
+<!-- Charity search form -->
+<div id="charity-search-form">
+    <div class="form-group row">
+      <div class="col-xs-2">
+      </div>
+      <div class="col-xs-8">
+        <input class="form-control" type="search" placeholder="Search for a charity" id="example-email-input">
+      </div>          
+    </div>
+</div>
+<!-- End charity search form -->
+
+
+<!-- Charity table -->
+<div id="charity-table">
+	{% for card in cardsArray %}
+
+    {% if loop.first || (loop.index - 1) % 4 == 0 %}
+    <div class="row">
+    {% endif %}
+        <div class="col-sm-3">
+            <div class="card charities-card" id="card-{{loop.index}}">
+                <img class="card-img img-fluid" src="{{card['1']}}" alt="Card image">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">{{card['0']}}</h4>
+                </div>
+            </div>
+        </div>
+    {% if loop.last || loop.index % 4 == 0 %}   
+    </div>
+    {% endif %}
+
+    {% endfor %}
+</div>
+<!-- End charity table-->
+
+<!-- Dynamic charity page script-->
+<script src="./js/charities_public.js"></script>
+
+{% endblock %}

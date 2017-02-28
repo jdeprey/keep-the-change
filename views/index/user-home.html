@@ -1,0 +1,44 @@
+{% extends '../layouts/default.html' %}
+
+{% block content %}
+
+
+<div id="home-jumbo" class="jumbotron">
+    <h3 id="home-jumbo-header" class="display-5">All-Time Contributions</h3>
+    <h3 id="monthly-total" class="display-1">${{totalContrib}}</h3>
+    <h3 id="home-charity-header" class="display-5 ">Current Charity</h3>
+    <h3 id="home-charity" class="display-5">{% if !charityName %}Not Selected{% else %}{{charityName}}{% endif %}</h3>
+    <h3 id="home-payment-header" class="display-5">Current Payment Provider</h3>
+    <h3 id="home-payment" class="display-5">{%if !paymentName %}Not Selected{% else %}{{paymentName}}{% endif %}</h3>
+</div>
+
+
+{% if history %}
+<h2>Contributions History</h2>
+<div id="transaction-table" class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Date</th>
+                <th>Donation Amount</th>
+                <th>Transaction Amount</th>
+                <th>Payment Provider</th>
+                <th>Charity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in contribArray %}
+            <tr>
+                <td>{{transaction[0]}}</td>
+                <td>{{transaction[1]}}</td>
+                <td>{{transaction[4]}}</td>
+                <td>{{transaction[2]}}</td>
+                <td>{{transaction[3]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+{% endblock %}
